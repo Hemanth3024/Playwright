@@ -6,15 +6,19 @@ export class LoginPage {
     this.userName = this.page.locator("#username");
     this.password = this.page.locator("#password");
     this.loginButton = this.page.locator("#Login");
+    this.rememberMe = this.page.locator('input[name = "rememberUn"]');
   }
 
   async fillUsername(userName) {
-    this.userName.fill(userName);
+    await this.userName.fill(userName);
   }
   async fillPassword(password) {
-    this.password.fill(password);
+    await this.password.fill(password);
   }
   async clickLogin() {
-    this.loginButton.click();
+    await this.loginButton.click();
+  }
+  async checkRememberMe() {
+    await this.rememberMe.check();
   }
 }
