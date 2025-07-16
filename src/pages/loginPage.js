@@ -21,4 +21,10 @@ export class LoginPage {
   async checkRememberMe() {
     await this.rememberMe.check();
   }
+
+  async loginWithUser(userName, password) {
+    await this.userName.fill(userName);
+    await this.password.fill(password);
+    await this.loginButton.click();
+  }
 }
